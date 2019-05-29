@@ -1,0 +1,10 @@
+stages: # Ici on déclare toutes nos étapes
+  - deploy
+
+
+  job:deploy:
+  stage: deploy # On déclare que ce `job` fait partie de l'étape deploy
+  script: - ssh root@13.95.229.45
+          - FivePoints@2019
+          - git pull
+          
