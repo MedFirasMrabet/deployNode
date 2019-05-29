@@ -3,9 +3,16 @@ var app = express();
 const msg = {
     msg: 'Hello World!'
 }
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+  
 // Routes
 app.get('/', function(req, res) {
-  res.send(msg);
+  res.json(msg);
 });
 
 // Listen
